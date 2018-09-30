@@ -1,7 +1,10 @@
 import _ from 'lodash';
 import React ,{Component} from 'react';
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
+import {Link}  from 'react-router-dom';
 import {abcgetpost}  from '../actions/index';
+
+
 
 
 
@@ -30,10 +33,12 @@ import {abcgetpost}  from '../actions/index';
         return (
           <div>
             <div className="text-xs-right">
-             
+             <Link className="btn btn-primery" to="post/new">Add A Post
+             </Link>
             </div>
             <h3>Posts</h3>
             <ul className="list-group">
+            <li>POST TITLE</li>
               {this.renderPosts()}
             </ul>
           </div>
