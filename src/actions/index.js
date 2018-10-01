@@ -1,6 +1,7 @@
 import axios from 'axios';
 
  export const VAR_Fetch_post='fetch_post';
+ export const Var_Get_post='get_post';
  export const Var_Create_post='create_post';
  
  const ROOT_URL='http://reduxblog.herokuapp.com/api';
@@ -33,3 +34,17 @@ export function createPost(values,callback){
     }
  
  }
+
+ export function getPost(id){
+    console.log('action');
+   
+       
+        const request=axios.get(`${ROOT_URL}/posts/${id}${APP_KEY}`);
+   //this is for after add blog redirect to list
+   
+       return{
+           type:Var_Get_post,
+           payload:request
+       }
+    
+    }

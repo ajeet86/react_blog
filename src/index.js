@@ -11,6 +11,7 @@ import reducers from './reducers';
 
 import PostIndex from './components/post_index';
 import PostNew from './components/post_detail';
+import ShowPost from './components/show_post';
 
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
@@ -22,6 +23,7 @@ ReactDOM.render(
 
             <Switch>
           <Route path='/post/new' component={PostNew} />
+          <Route path='/post/:id' component={ShowPost} />
           <Route path='/' component={PostIndex} />
 
          
