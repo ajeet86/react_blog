@@ -24,6 +24,7 @@ ReactDOM.render(
             <Switch>
           <Route path='/post/new' component={PostNew} />
           <Route path='/post/:id' component={ShowPost} />
+          <Route path='/post/:id/:catrgoty' component={ShowPost} />
           <Route path='/' component={PostIndex} />
 
          

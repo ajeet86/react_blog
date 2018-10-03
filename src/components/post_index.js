@@ -48,7 +48,7 @@ import {abcgetpost}  from '../actions/index';
   
 
 function mapStateToProps(state){
-  // console.log(state.FetchPost);
+  // console.log(state.FetchPost+'list component');
     return{posts:state.FetchPost}
 
 }

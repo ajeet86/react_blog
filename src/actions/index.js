@@ -1,7 +1,7 @@
 import axios from 'axios';
 
  export const VAR_Fetch_post='fetch_post';
- export const Var_Get_post='get_post';
+ export const Get_post='get_post';
  export const Var_Create_post='create_post';
  
  const ROOT_URL='http://reduxblog.herokuapp.com/api';
@@ -21,7 +21,7 @@ export function abcgetpost(){
 
 
 export function createPost(values,callback){
- console.log('action');
+ //console.log('action');
 
     
      const request=axios.post(`${ROOT_URL}/posts${APP_KEY}`,values)
@@ -36,14 +36,15 @@ export function createPost(values,callback){
  }
 
  export function getPost(id){
-    console.log('action');
+    //console.log(id);
    
-       
-        const request=axios.get(`${ROOT_URL}/posts/${id}${APP_KEY}`);
-   //this is for after add blog redirect to list
+   //console.log(Var_Get_post);
+        const request=axios.get(`${ROOT_URL}/posts/${id}/${APP_KEY}`);
+       // console.log(`${ROOT_URL}/posts/${id}/${APP_KEY}`);
+   
    
        return{
-           type:Var_Get_post,
+           type:Get_post,
            payload:request
        }
     
