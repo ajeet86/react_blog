@@ -1,13 +1,16 @@
 import _ from 'lodash';
 
-import {VAR_Fetch_post,Get_post} from '../actions';
-console.log('aaaa'+Get_post);
+import {VAR_Fetch_post,Get_post,Delete_post} from '../actions';
 
 export default function(state= {},action){
   
      
      console.log('dddd'+VAR_Fetch_post);
      switch(action.type){
+          case Delete_post:
+            return _.omit(state,action.payload.data);
+
+
           case Get_post:
           // const post=action.payload.data;
           // const newState ={...state};

@@ -19,10 +19,7 @@ import {abcgetpost}  from '../actions/index';
         return _.map(this.props.posts, post => {
           return (
             <li className="list-group-item" key={post.id}>
-              
-                {post.title}
-                {post.id}
-              
+                  <Link to={`/post/${post.id}`}>{post.title}</Link>
             </li>
           );
         });
