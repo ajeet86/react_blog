@@ -3,6 +3,7 @@ import React ,{Component} from 'react';
 import { connect } from 'react-redux';
 import {Link}  from 'react-router-dom';
 import {abcgetpost}  from '../actions/index';
+import SearchBox from './searchbox';
 
 
 
@@ -29,6 +30,7 @@ import {abcgetpost}  from '../actions/index';
               // console.log('112'+this.props.posts)
         return (
           <div>
+            <SearchBox/>
             <div className="text-xs-right">
              <Link className="btn btn-primery" to="post/new">Add A Post
              </Link>

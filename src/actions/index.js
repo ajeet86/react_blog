@@ -4,6 +4,8 @@ import axios from 'axios';
  export const Get_post='get_post';
  export const Var_Create_post='create_post';
  export const Delete_post='delete_post';
+ export const var_search_post='search_post';
+
  
  
  const ROOT_URL='http://reduxblog.herokuapp.com/api';
@@ -20,6 +22,19 @@ export function abcgetpost(){
    }
 
 }
+
+export function searchPost(searchterm){
+     //console.log('action'+searchterm);
+    
+     const request=axios.get(`${ROOT_URL}/posts${APP_KEY}`);
+     
+    return{
+        type:var_search_post,  
+       payload:request
+       // payload:request+'@'+searchterm
+    }
+ 
+ }
 
 
 export function createPost(values,callback){

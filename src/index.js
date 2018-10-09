@@ -12,12 +12,15 @@ import reducers from './reducers';
 import PostIndex from './components/post_index';
 import PostNew from './components/post_detail';
 import ShowPost from './components/show_post';
+ 
+ 
 
+//const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 
-const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
+const store = createStore(reducers,applyMiddleware(promiseMiddleware));
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <div>
         <BrowserRouter>
 
